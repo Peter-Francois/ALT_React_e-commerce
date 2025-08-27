@@ -1,13 +1,17 @@
 import './App.css'
 import Product from './components/Product'
+import products from './data/products'
+import type ProductInterface from './interfaces/product'
+
+
 
 function App() {
-  const items = ['porte-feuille', 'ceinture', 'autre']
+  const items: ProductInterface[] = products
 
   return (
     <>
-      {items.map((item: string, index: number)=>{
-        return <Product key={index} item = {item} />
+      {items.map((item: ProductInterface, index: number)=>{
+        return <Product key={index} productData={item} />
       })}
     </>
   )
