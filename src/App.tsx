@@ -1,13 +1,14 @@
 import './App.css'
+import Product from './components/Product'
 
 function App() {
-
+  const items = ['porte-feuille', 'ceinture', 'autre']
 
   return (
     <>
-      <h1 className="text-3xl text-blue-700 font-bold underline">
-        Hello world!
-      </h1>
+      {items.map((item: string, index: number)=>{
+        return <Product key={index} item = {item} />
+      })}
     </>
   )
 }
